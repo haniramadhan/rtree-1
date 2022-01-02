@@ -8,15 +8,45 @@ import java.io.Serializable;
 
 public class RectNd implements HyperRect, Serializable {
     private final PointNd min, max;
+    final int id;
 
     RectNd(final PointNd p){
         min = new PointNd(p.getPoint());
         max = new PointNd(p.getPoint());
+        id = -1;
+    }
+    RectNd(final PointNd p, int id_){
+        min = new PointNd(p.getPoint());
+        max = new PointNd(p.getPoint());
+        id = id_;
     }
 
+    public RectNd(final double[] p1, final double[] p2, int id_){
+        min = new PointNd(p1);
+        max = new PointNd(p2);
+        id = id_;
+    }
+    public RectNd(final PointNd p1, final PointNd p2, int id_){
+
+        final double[] minP = new double[p1.getNDim()];
+        final double[] maxP = new double[p1.getNDim()];
+        for(int i=0;i<p1.getNDim();i++){
+            minP[i] = p1.getCoord(i);
+            maxP[i] = p2.getCoord(i);
+            if(minP[i]>maxP[i]){
+                maxP[i] = p1.getCoord(i);;
+                minP[i] = p2.getCoord(i);;
+            }
+        }
+
+        min = new PointNd(minP);
+        max = new PointNd(maxP);
+        id = id_;
+    }
     public RectNd(final double[] p1, final double[] p2){
         min = new PointNd(p1);
         max = new PointNd(p2);
+        id = -1;
     }
     public RectNd(final PointNd p1, final PointNd p2){
 
@@ -33,6 +63,7 @@ public class RectNd implements HyperRect, Serializable {
 
         min = new PointNd(minP);
         max = new PointNd(maxP);
+        id = -1;
     }
 
     @Override
