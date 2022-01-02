@@ -20,6 +20,7 @@ package com.conversantmedia.util.collection.spatial;
  * #L%
  */
 
+import java.io.Serializable;
 import java.util.function.Consumer;
 import java.util.Collection;
 
@@ -32,7 +33,7 @@ import java.util.Collection;
  * <p>
  * Created by jcairns on 4/30/15.</p>
  */
-public final class RTree<T> implements SpatialSearch<T> {
+public final class RTree<T> implements SpatialSearch<T>, Serializable {
     private static final double EPSILON = 1e-12;
 
     private final int mMin;
@@ -42,7 +43,7 @@ public final class RTree<T> implements SpatialSearch<T> {
 
     private Node<T> root = null;
 
-    protected RTree(final RectBuilder<T> builder, final int mMin, final int mMax, final Split splitType) {
+    public RTree(final RectBuilder<T> builder, final int mMin, final int mMax, final Split splitType) {
         this.mMin = mMin;
         this.mMax = mMax;
         this.builder = builder;

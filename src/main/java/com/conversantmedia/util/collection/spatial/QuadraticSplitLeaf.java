@@ -20,12 +20,14 @@ package com.conversantmedia.util.collection.spatial;
  * #L%
  */
 
+import java.io.Serializable;
+
 /**
  * Guttmann's Quadratic split
  *
  * Created by jcairns on 5/5/15.
  */
-final class QuadraticSplitLeaf<T> extends Leaf<T> {
+final class QuadraticSplitLeaf<T> extends Leaf<T>  implements Serializable {
 
     protected QuadraticSplitLeaf(final RectBuilder<T> builder, final int mMin, final int mMax) {
         super(builder, mMin, mMax, RTree.Split.QUADRATIC);

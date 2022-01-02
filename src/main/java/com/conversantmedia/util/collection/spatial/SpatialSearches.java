@@ -20,6 +20,7 @@ package com.conversantmedia.util.collection.spatial;
  * #L%
  */
 
+import java.io.Serializable;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
@@ -27,7 +28,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  *
  * Created by jcovert on 2/3/16.
  */
-public class SpatialSearches {
+public class SpatialSearches  implements Serializable {
 
     private static final int DEFAULT_MIN_M = 2;
     private static final int DEFAULT_MAX_M = 8;

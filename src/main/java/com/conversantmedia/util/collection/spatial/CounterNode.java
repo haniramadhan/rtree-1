@@ -20,12 +20,13 @@ package com.conversantmedia.util.collection.spatial;
  * #L%
  */
 
+import java.io.Serializable;
 import java.util.function.Consumer;
 
 /**
  * Created by jcovert on 6/18/15.
  */
-final class CounterNode<T> implements Node<T> {
+final class CounterNode<T> implements Node<T>, Serializable {
     private final Node<T> node;
 
     static int searchCount = 0;

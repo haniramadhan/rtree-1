@@ -20,6 +20,7 @@ package com.conversantmedia.util.collection.spatial;
  * #L%
  */
 
+import java.io.Serializable;
 import java.util.function.Consumer;
 
 /**
@@ -27,7 +28,7 @@ import java.util.function.Consumer;
  *
  * Created by jcairns on 4/30/15.
  */
-abstract class Leaf<T> implements Node<T> {
+abstract class Leaf<T> implements Node<T>, Serializable {
 
     protected final int mMax;       // max entries per node
 

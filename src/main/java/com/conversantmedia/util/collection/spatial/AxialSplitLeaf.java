@@ -20,6 +20,7 @@ package com.conversantmedia.util.collection.spatial;
  * #L%
  */
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -30,7 +31,7 @@ import java.util.Comparator;
  *
  * Created by jcairns on 5/5/15.
  */
-final class AxialSplitLeaf<T> extends Leaf<T> {
+final class AxialSplitLeaf<T> extends Leaf<T> implements Serializable {
 
     protected AxialSplitLeaf(final RectBuilder<T> builder, final int mMin, final int mMax) {
         super(builder, mMin, mMax, RTree.Split.AXIAL);

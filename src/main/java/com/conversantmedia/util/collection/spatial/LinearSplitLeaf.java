@@ -20,12 +20,14 @@ package com.conversantmedia.util.collection.spatial;
  * #L%
  */
 
+import java.io.Serializable;
+
 /**
  * Guttmann's Linear split
  *
  * Created by jcairns on 5/5/15.
  */
-final class LinearSplitLeaf<T> extends Leaf<T> {
+final class LinearSplitLeaf<T> extends Leaf<T> implements Serializable {
 
     protected LinearSplitLeaf(final RectBuilder<T> builder, final int mMin, final int mMax) {
         super(builder, mMin, mMax, RTree.Split.LINEAR);

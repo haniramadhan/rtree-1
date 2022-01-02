@@ -21,11 +21,12 @@ package com.conversantmedia.util.collection.spatial;
  */
 
 import java.io.PrintStream;
+import java.io.Serializable;
 
 /**
  * Created by jcovert on 5/20/15.
  */
-public class Stats {
+public class Stats  implements Serializable {
 
     private RTree.Split type;
     private int maxFill;
